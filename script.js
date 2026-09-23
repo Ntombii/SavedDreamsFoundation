@@ -1,10 +1,10 @@
+
 /* =========================================
    SAVED DREAMS FOUNDATION
    WEBSITE JAVASCRIPT
 ========================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
-
 
     /* =========================================
        MOBILE NAVIGATION
@@ -36,13 +36,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     "aria-label",
                     "Open navigation"
                 );
-
             }
-
         });
 
 
-        /* Close menu after clicking a link */
+        /* Close menu after clicking a navigation link */
 
         const navLinks = navMenu.querySelectorAll("a");
 
@@ -58,11 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     "aria-label",
                     "Open navigation"
                 );
-
             });
-
         });
-
     }
 
 
@@ -85,11 +80,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 header.style.boxShadow =
                     "0 2px 10px rgba(0, 0, 0, 0.04)";
-
             }
-
         });
-
     }
 
 
@@ -99,7 +91,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const cards = document.querySelectorAll(".info-card");
 
-    if (cards.length > 0) {
+    if (
+        cards.length > 0 &&
+        "IntersectionObserver" in window
+    ) {
 
         const cardObserver = new IntersectionObserver(
             function (entries) {
@@ -114,9 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             "translateY(0)";
 
                         cardObserver.unobserve(entry.target);
-
                     }
-
                 });
 
             },
@@ -137,9 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "opacity 0.6s ease, transform 0.6s ease";
 
             cardObserver.observe(card);
-
         });
-
     }
 
 
@@ -151,7 +142,10 @@ document.addEventListener("DOMContentLoaded", function () {
         ".about-content, .mission-card, .team-section, .about-cta"
     );
 
-    if (aboutElements.length > 0) {
+    if (
+        aboutElements.length > 0 &&
+        "IntersectionObserver" in window
+    ) {
 
         const aboutObserver = new IntersectionObserver(
             function (entries) {
@@ -166,9 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             "translateY(0)";
 
                         aboutObserver.unobserve(entry.target);
-
                     }
-
                 });
 
             },
@@ -189,9 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "opacity 0.7s ease, transform 0.7s ease";
 
             aboutObserver.observe(element);
-
         });
-
     }
 
 
@@ -199,48 +189,57 @@ document.addEventListener("DOMContentLoaded", function () {
        PROGRAM IMAGE SLIDESHOW
     ========================================= */
 
-    const slideshow =
-        document.querySelector(".program-slideshow");
+    const slideshows =
+        document.querySelectorAll(".program-slideshow");
 
-    if (slideshow) {
+
+    slideshows.forEach(function (slideshow) {
 
         const slides =
             slideshow.querySelectorAll(".program-slide");
 
+        const container =
+            slideshow.parentElement;
+
         const previousButton =
-            slideshow.parentElement.querySelector(".slide-prev");
+            container.querySelector(".slide-prev");
 
         const nextButton =
-            slideshow.parentElement.querySelector(".slide-next");
+            container.querySelector(".slide-next");
 
         let currentSlide = 0;
 
 
-        /* Make sure the first slide is visible */
+        /* Stop if there are no slides */
 
-        if (slides.length > 0) {
-
-            slides[0].classList.add("active-slide");
-
+        if (slides.length === 0) {
+            return;
         }
 
 
-        /* Show selected slide */
+        /* Make sure the first slide is visible */
+
+        slides[0].classList.add("active-slide");
+
+
+        /* =========================================
+           SHOW SELECTED SLIDE
+        ========================================= */
 
         function showSlide(index) {
 
             slides.forEach(function (slide) {
 
                 slide.classList.remove("active-slide");
-
             });
 
             slides[index].classList.add("active-slide");
-
         }
 
 
-        /* Next image */
+        /* =========================================
+           NEXT SLIDE
+        ========================================= */
 
         function nextSlide() {
 
@@ -249,15 +248,15 @@ document.addEventListener("DOMContentLoaded", function () {
             if (currentSlide >= slides.length) {
 
                 currentSlide = 0;
-
             }
 
             showSlide(currentSlide);
-
         }
 
 
-        /* Previous image */
+        /* =========================================
+           PREVIOUS SLIDE
+        ========================================= */
 
         function previousSlide() {
 
@@ -265,16 +264,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (currentSlide < 0) {
 
-                currentSlide = slides.length - 1;
-
+                currentSlide =
+                    slides.length - 1;
             }
 
             showSlide(currentSlide);
-
         }
 
 
-        /* Next button */
+        /* =========================================
+           NEXT BUTTON
+        ========================================= */
 
         if (nextButton) {
 
@@ -282,11 +282,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 "click",
                 nextSlide
             );
-
         }
 
 
-        /* Previous button */
+        /* =========================================
+           PREVIOUS BUTTON
+        ========================================= */
 
         if (previousButton) {
 
@@ -294,11 +295,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 "click",
                 previousSlide
             );
-
         }
 
 
-        /* Automatic slideshow */
+        /* =========================================
+           AUTOMATIC SLIDESHOW
+        ========================================= */
 
         if (slides.length > 1) {
 
@@ -307,10 +309,165 @@ document.addEventListener("DOMContentLoaded", function () {
                 nextSlide();
 
             }, 5000);
-
         }
+    });
 
+
+    /* =========================================
+       ENQUIRY FORM VALIDATION
+    ========================================= */
+
+    const enquiryForm =
+        document.getElementById("enquiryForm");
+
+    if (enquiryForm) {
+
+        const formMessage =
+            document.getElementById("formMessage");
+
+
+        enquiryForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                /* Get form values */
+
+                const fullname =
+                    document.getElementById("fullname")
+                        .value
+                        .trim();
+
+                const email =
+                    document.getElementById("email")
+                        .value
+                        .trim();
+
+                const type =
+                    document.getElementById("type")
+                        .value;
+
+                const message =
+                    document.getElementById("message")
+                        .value
+                        .trim();
+
+
+                /* Reset message */
+
+                if (formMessage) {
+
+                    formMessage.className =
+                        "form-message";
+
+                    formMessage.textContent = "";
+                }
+
+
+                /* =========================================
+                   FULL NAME VALIDATION
+                ========================================= */
+
+                if (fullname.length < 2) {
+
+                    if (formMessage) {
+
+                        formMessage.className =
+                            "form-message error";
+
+                        formMessage.textContent =
+                            "Please enter your full name.";
+                    }
+
+                    return;
+                }
+
+
+                /* =========================================
+                   EMAIL VALIDATION
+                ========================================= */
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                if (!emailPattern.test(email)) {
+
+                    if (formMessage) {
+
+                        formMessage.className =
+                            "form-message error";
+
+                        formMessage.textContent =
+                            "Please enter a valid email address.";
+                    }
+
+                    return;
+                }
+
+
+                /* =========================================
+                   ENQUIRY TYPE VALIDATION
+                ========================================= */
+
+                if (type === "") {
+
+                    if (formMessage) {
+
+                        formMessage.className =
+                            "form-message error";
+
+                        formMessage.textContent =
+                            "Please select how you would like to get involved.";
+                    }
+
+                    return;
+                }
+
+
+                /* =========================================
+                   MESSAGE VALIDATION
+                ========================================= */
+
+                if (message.length < 10) {
+
+                    if (formMessage) {
+
+                        formMessage.className =
+                            "form-message error";
+
+                        formMessage.textContent =
+                            "Please enter a message of at least 10 characters.";
+                    }
+
+                    return;
+                }
+
+
+                /* =========================================
+                   SUCCESS MESSAGE
+                ========================================= */
+
+                if (formMessage) {
+
+                    formMessage.className =
+                        "form-message success";
+
+                    formMessage.textContent =
+                        "Thank you for your enquiry! Your message has been captured successfully.";
+                }
+
+
+                /* Clear form */
+
+                enquiryForm.reset();
+            }
+        );
     }
-    
+    /* ========================================= MOBILE NAVIGATION ========================================= */ 
+    document.addEventListener("DOMContentLoaded", function () { const menuBtn = document.getElementById("menuBtn"); const navMenu = document.getElementById("navMenu"); if (menuBtn && navMenu) { menuBtn.addEventListener("click", function () { navMenu.classList.toggle("active"); if (navMenu.classList.contains("active")) { menuBtn.setAttribute("aria-label", "Close navigation"); menuBtn.innerHTML = "✕"; } else { menuBtn.setAttribute("aria-label", "Open navigation"); menuBtn.innerHTML = "☰"; } }); } });
 
 });
+

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
    
 </head>
-<body>
+<body class="enquiry-page">
 <!-- =========================================
      WEBSITE HEADER
 ========================================= -->
@@ -68,10 +68,10 @@
 
 </header>
  <!--main content of the page-->
-    <main>
+    <main class="enquiry-main">
         <h1>Volunteer & Sponsorship Enquiry</h1>
 		<!--form for sponsor,volunteer, or general enquiry-->
-        <form action="#" method="post">
+        <form id="enquiryForm" class="enquiry-form" action="#" method="post">
             <label for="fullname">Full Name:</label>
             <input type="text" id="fullname" name="fullname" required>
 
@@ -90,11 +90,14 @@
             <textarea id="message" name="message" rows="5" required></textarea>
 <!--submit button for the form-->
             <button type="submit">Submit Enquiry</button>
+            <p id="formMessage" class="form-message"></p>
         </form>
     </main>
 <!--this is the footer-->
     <footer>
         <p>&copy; 2026 Saved Dreams Foundation. All Rights Reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
