@@ -2,6 +2,7 @@
   "name": "saved-dreams-foundation",
   "version": "1.0.1",
   "scripts": {
+    "start": "npx http-server . -p 8080",
     "release": "release-it"
   },
   "devDependencies": {

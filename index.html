@@ -1,59 +1,296 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-	<!--for a responsive page on mobile devices-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-	<!--title appears on browser tab and in Google searh results-->   
-   <title>Saved Dreams Foundation | Home</title>
-   <div class="topbar">Building resilient learners • Empowered educators • Stronger communities</div>
 
+    <!-- Responsive design for mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser title -->
+    <title>Saved Dreams Foundation | Home</title>
+
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!--website header-->
-    <header>
-	<!--logo-->
-        <div class="logo">
-            <img src="images/logo.jpg" style="width: 150px; height: auto" alt="Saved Dreams Foundation Logo">
-        </div>
-		<!--navigation bar-->
-        <nav>
-           
-                <a href="index.html">Home</a>
+
+    <!-- Top information bar -->
+    <div class="topbar">
+        Building resilient learners • Empowered educators • Stronger communities
+    </div>
+
+
+    <!-- =========================
+         WEBSITE HEADER
+    ========================== -->
+    <header class="header">
+
+        <div class="header-container">
+
+            <!-- Logo -->
+            <a href="index.html"
+   class="logo"
+   style="display: inline-block; text-decoration: none;">
+
+    <img
+        src="images/logo.jpg"
+        alt="Saved Dreams Foundation Logo"
+        style="width: 150px; height: auto; object-fit: contain; display: block;"
+    >
+
+</a>
+
+
+            <!-- Mobile menu button -->
+            <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">
+                ☰
+            </button>
+
+
+            <!-- Navigation -->
+            <nav id="navMenu" class="nav-menu">
+
+                <a href="index.html" class="active">Home</a>
+
                 <a href="about.html">About Us</a>
+
                 <a href="program.html">Programs & Services</a>
+
                 <a href="enquiry.html">Get Involved</a>
+
                 <a href="contacts.html">Contact Us</a>
-           
-        </nav>
+
+            </nav>
+
+        </div>
+
     </header>
-    <!--main content of my page-->
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
     <main>
-	
-	
-	<!--separate block or part of my page-->
+
+        <!-- Hero Section -->
         <section class="hero">
-            <h1>Empowering Communities, Restoring Hope</h1>
-			<!--carousel that slides pictures -->
-			<a href="program.html"> <img src="images/slide1.jpg" alt="slide images" style="width:500px ; height=auto">
-				<a href="program.html"> <img src="images/slide2.jpg" alt="slide images" style="width:500px ; height=auto">
-				</a>
-            <p>Building Resilient Learners, Empowered Educators & Stronger Communities</p>
-           
-		   <!-- link that takes you to the enquiry page-->
-		   <a href="enquiry.html" class="btn">Become a Volunteer</a>
-			<p><a href="enquiry.html" class="btn">Donate Now</a></p>
+
+            <!-- Hero image -->
+            <div class="hero-image">
+                <img
+                    src="images/slide1.jpg"
+                    alt="Saved Dreams Foundation community outreach"
+                >
+            </div>
+
+
+            <!-- Dark overlay -->
+            <div class="hero-overlay"></div>
+
+
+            <!-- Hero content -->
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    SAVED DREAMS FOUNDATION
+                </p>
+
+                <h1>
+                    Empowering Communities,
+                    <span>Restoring Hope</span>
+                </h1>
+
+                <p class="hero-text">
+                    Building resilient learners, empowered educators
+                    and stronger communities through education,
+                    support and community development.
+                </p>
+
+
+                <!-- Hero buttons -->
+                <div class="hero-buttons">
+
+                    <a href="enquiry.html" class="btn btn-gold">
+                        Become a Volunteer
+                    </a>
+
+                    <a href="enquiry.html" class="btn btn-outline">
+                        Donate Now
+                    </a>
+
+                </div>
+
+            </div>
+
         </section>
-        <!--separate block-->
-        <section class="intro">
-            <h2>Welcome to Saved Dreams Foundation</h2>
-            <p>We are dedicated to uplifting underprivileged communities by providing essential resources, education, and support programs.We support children, young people, families and educators with practical services and opportunities that help communities build brighter, healthier futures.</p>
+
+
+        <!-- =========================
+             INTRODUCTION
+        ========================== -->
+        <section class="intro section">
+
+            <div class="container">
+
+                <p class="section-label">
+                    WELCOME
+                </p>
+
+                <h2>
+                    Welcome to Saved Dreams Foundation
+                </h2>
+
+                <p class="intro-text">
+                    We are dedicated to uplifting underprivileged
+                    communities by providing essential resources,
+                    education and support programmes.
+                </p>
+
+                <p class="intro-text">
+                    We support children, young people, families and
+                    educators with practical services and opportunities
+                    that help communities build brighter, healthier
+                    futures.
+                </p>
+
+
+                <!-- Information cards -->
+                <div class="info-cards">
+
+                    <div class="info-card">
+                        <div class="info-icon">🌱</div>
+
+                        <h3>
+                            Empowering Communities
+                        </h3>
+
+                        <p>
+                            Supporting communities with resources,
+                            opportunities and programmes that encourage
+                            sustainable development.
+                        </p>
+                    </div>
+
+
+                    <div class="info-card">
+                        <div class="info-icon">📚</div>
+
+                        <h3>
+                            Supporting Education
+                        </h3>
+
+                        <p>
+                            Helping learners and educators access
+                            support and opportunities that promote
+                            growth and development.
+                        </p>
+                    </div>
+
+
+                    <div class="info-card">
+                        <div class="info-icon">❤️</div>
+
+                        <h3>
+                            Restoring Hope
+                        </h3>
+
+                        <p>
+                            Working with vulnerable individuals and
+                            families to create positive change and
+                            brighter futures.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
         </section>
+
+
+        <!-- =========================
+             CALL TO ACTION
+        ========================== -->
+        <section class="cta">
+
+            <div class="container">
+
+                <h2>
+                    Be Part of the Change
+                </h2>
+
+                <p>
+                    Your support can help us create opportunities,
+                    restore hope and strengthen communities.
+                </p>
+
+                <a href="enquiry.html" class="btn btn-gold">
+                    Get Involved
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2026 Saved Dreams Foundation. All Rights Reserved.</p>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div>
+                    <h3>
+                        Saved Dreams Foundation
+                    </h3>
+
+                    <p>
+                        Building resilient learners, empowered
+                        educators and stronger communities.
+                    </p>
+                </div>
+
+
+                <div>
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="program.html">Programs & Services</a>
+                    <a href="enquiry.html">Get Involved</a>
+                    <a href="contacts.html">Contact Us</a>
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    &copy; 2026 Saved Dreams Foundation.
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
     </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
 </body>
+
 </html>
