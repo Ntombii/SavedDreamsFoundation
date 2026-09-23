@@ -2,56 +2,281 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-			<!--for a responsive page on mobile devices-->
+
+    <!-- For a responsive page on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<!--title appears on browser tab and in Google searh results--> 
+
+    <!-- Title appears on browser tab -->
     <title>About Us - Saved Dreams Foundation</title>
 
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<!-- website header-->
-    <header>
-	<!--Website logo-->
-	<div class="logo">
-            <img src="images/logo.jpg" style="width: 150px; height: auto" alt="Saved Dreams Foundation Logo">
-        </div>
-		<!--navigation bar-->
-        <nav>
+    
+
+<!-- =========================================
+     WEBSITE HEADER
+========================================= -->
+
+<div class="topbar">
+    Building resilient learners • Empowered educators • Stronger communities
+</div>
+
+<header class="header">
+
+    <div class="header-container">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <img
+                src="images/logo.jpg"
+                alt="Saved Dreams Foundation Logo"
+            >
+        </a>
+
+
+        <!-- Navigation -->
+        <nav class="nav-menu" id="navMenu">
+
             <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="program.html">Programs & Services</a>
-                <a href="enquiry.html">Get Involved</a>
-                <a href="contacts.html">Contact Us</a>
+
+            <a href="about.html" class="active">
+                About Us
+            </a>
+
+            <a href="program.html">
+                Programs &amp; Services
+            </a>
+
+            <a href="enquiry.html">
+                Get Involved
+            </a>
+
+            <a href="contacts.html">
+                Contact Us
+            </a>
+
         </nav>
-    </header>
- <!--main content of the page-->
+
+
+        <!-- Mobile menu button -->
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Open navigation"
+        >
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+    <!-- Main content -->
     <main>
-	
-	<!--separate block or part of my page-->
-        <section>
-            <h1>About Saved Dreams Foundation</h1>
-            
-            <p>Founded to bridge the gap in community support, Saved Dreams Foundation works tirelessly to aid vulnerable individuals.A non-profit organisation whose work focuses on supporting disadvantaged school children and the community as a whole. The organisation also advocates for sexual and reproductive health, gender-based violence awareness, mental-health awareness and the prevention of teenage pregnancies.
-The organisation's stated vision is to eradicate period poverty and create a world where women have menstrual dignity. Its mission focuses on normalising menstruation and challenging myths and stigma surrounding menstruation. Its goal is to empower girls with the resources they need to manage their periods so that they can continue focusing on their education and personal goals.
-The organisation's activities include problem identification, training, community sensitisation and follow-up visits. 
-</p>
-            
-            <h2>Mission & Vision</h2>
-            <p><strong>Mission:</strong> To provide holistic communities holistic psychosocial support, youth empowerment programmes, family strengthening services and preventative education initiatives that promote wellbeing, resilience, safety and positive life outcomes for children, families and communities</p>
-            <p><strong>Vision:</strong> To build resilient learners, empowered educators and thriving communities where every child has the opportunity, support and confidence to reach their full potential. </p>
 
-            <!--team section and image-->
-           <h3>The Team</h3>
+        <!-- Page hero -->
+        <section class="about-hero">
 
-<a href="program.html">
-                <img src="images/team.jpg" alt="slide images" style="width: 500px; height: auto;">
-            </a>		   
+            <div class="about-hero-content">
+                <p class="section-label">WHO WE ARE</p>
+
+                <h1>About Saved Dreams Foundation</h1>
+
+                <p>
+                    Empowering children, families and communities to build
+                    brighter and more resilient futures.
+                </p>
+            </div>
+
         </section>
+
+
+        <!-- About section -->
+        <section class="about-section">
+
+            <div class="about-content">
+
+                <div class="about-text">
+
+                    <p class="section-label">ABOUT US</p>
+
+                    <h2>Creating Hope Through Community Support</h2>
+
+                    <p>
+                        Founded to bridge the gap in community support,
+                        Saved Dreams Foundation works tirelessly to aid
+                        vulnerable individuals and disadvantaged communities.
+                    </p>
+
+                    <p>
+                        The organisation focuses on supporting disadvantaged
+                        school children and the community as a whole. It also
+                        advocates for sexual and reproductive health,
+                        gender-based violence awareness, mental-health
+                        awareness and the prevention of teenage pregnancies.
+                    </p>
+
+                    <p>
+                        Saved Dreams Foundation works towards eradicating
+                        period poverty and creating a world where women and
+                        girls can experience menstrual dignity.
+                    </p>
+
+                    <p>
+                        Its mission focuses on normalising menstruation,
+                        challenging myths and stigma surrounding menstruation,
+                        and empowering girls with the resources they need to
+                        manage their periods while continuing to focus on
+                        their education and personal goals.
+                    </p>
+
+                    <p>
+                        The organisation's activities include problem
+                        identification, training, community sensitisation
+                        and follow-up visits.
+                    </p>
+
+                </div>
+
+                <!-- About image -->
+                <div class="about-image">
+                    <img
+                        src="images/team.jpg"
+                        alt="Saved Dreams Foundation team"
+                    >
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Mission and Vision -->
+        <section class="mission-section">
+
+            <div class="section-heading">
+                <p class="section-label">OUR PURPOSE</p>
+
+                <h2>Mission &amp; Vision</h2>
+
+                <p>
+                    Our work is guided by a commitment to support,
+                    empower and strengthen communities.
+                </p>
+            </div>
+
+
+            <div class="mission-cards">
+
+                <!-- Mission -->
+                <article class="mission-card">
+
+                    <div class="card-icon">🎯</div>
+
+                    <h3>Our Mission</h3>
+
+                    <p>
+                        To provide holistic psychosocial support, youth
+                        empowerment programmes, family strengthening services
+                        and preventative education initiatives that promote
+                        wellbeing, resilience, safety and positive life
+                        outcomes for children, families and communities.
+                    </p>
+
+                </article>
+
+
+                <!-- Vision -->
+                <article class="mission-card">
+
+                    <div class="card-icon">🌱</div>
+
+                    <h3>Our Vision</h3>
+
+                    <p>
+                        To build resilient learners, empowered educators and
+                        thriving communities where every child has the
+                        opportunity, support and confidence to reach their
+                        full potential.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Team section -->
+        <section class="team-section">
+
+            <div class="team-content">
+
+                <p class="section-label">OUR TEAM</p>
+
+                <h2>Working Together for Stronger Communities</h2>
+
+                <p>
+                    Our team is committed to working alongside communities
+                    to identify challenges, provide support and create
+                    meaningful opportunities for children, young people
+                    and families.
+                </p>
+
+                <a href="program.html" class="btn">
+                    Explore Our Programmes
+                </a>
+
+            </div>
+
+
+            <div class="team-image">
+
+                <img
+                    src="images/team.jpg"
+                    alt="Saved Dreams Foundation team members"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- Call to action -->
+        <section class="about-cta">
+
+            <h2>Be Part of the Change</h2>
+
+            <p>
+                Together, we can help build resilient learners,
+                empowered educators and stronger communities.
+            </p>
+
+            <a href="enquiry.html" class="btn">
+                Get Involved
+            </a>
+
+        </section>
+
     </main>
 
-    <!--this is the footer-->
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Saved Dreams Foundation. All Rights Reserved.</p>
+
+        <p>
+            &copy; 2026 Saved Dreams Foundation.
+            All Rights Reserved.
+        </p>
+
     </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
 </body>
 </html>

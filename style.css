@@ -292,6 +292,119 @@ p, h1, h2, h3 {
   color: #dfe9e6;
 }
 
+.about-hero {
+  background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+  color: var(--white);
+  padding: 86px 20px;
+  text-align: center;
+}
+
+.about-hero-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.about-hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  margin: 12px 0 16px;
+}
+
+.about-hero .section-label,
+.about-section .section-label,
+.mission-section .section-label,
+.team-section .section-label {
+  color: var(--gold);
+}
+
+.about-section,
+.mission-section,
+.team-section,
+.about-cta {
+  padding: 72px 20px;
+}
+
+.about-content,
+.team-content,
+.team-image,
+.mission-cards,
+.section-heading {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-content,
+.team-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.about-section,
+.team-section {
+  background: var(--white);
+}
+
+.about-text h2,
+.team-content h2,
+.section-heading h2 {
+  color: var(--green-dark);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1.15;
+}
+
+.about-image img,
+.team-image img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px var(--shadow);
+}
+
+.mission-section {
+  background: var(--green-soft);
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 700px;
+}
+
+.mission-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.mission-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px var(--shadow);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.mission-card h3 {
+  color: var(--green-dark);
+}
+
+.about-cta {
+  background: #f0efe7;
+  text-align: center;
+}
+
+.about-cta h2 {
+  color: var(--green-dark);
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
 @media (max-width: 768px) {
   .menu-btn {
     display: block;
@@ -320,5 +433,18 @@ p, h1, h2, h3 {
 
   .hero {
     min-height: 440px;
+  }
+
+  .about-content,
+  .team-section,
+  .mission-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section,
+  .mission-section,
+  .team-section,
+  .about-cta {
+    padding: 52px 20px;
   }
 }
