@@ -6,7 +6,7 @@
 
 - added images  to all pages 
 - added comments to all pages
-## 1.0.2
+## 1.0.3
 
 ### Changed
 
