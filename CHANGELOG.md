@@ -4,12 +4,14 @@
 
 ### Added
 
-- Add home, about, programs and services, get involved, and contact pages.
-- Add a volunteer and sponsorship enquiry form.
-- Add mobile navigation and responsive page layouts.
+- added stylesheet and linked it to all pages
 
-## 1.0.1
+## 1.0.2
 
-### Patch Changes
+### Changed
 
 - Add package metadata and initialize Changesets
+### Removed
+
+-
+### Fixed
