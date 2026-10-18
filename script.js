@@ -27,3 +27,4 @@ if (menuButton && navigationMenu) {
 		}
 	});
 }
+

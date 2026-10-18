@@ -1,22 +1,23 @@
-# saved-dreams-foundation
+# Saved Dreams Foundation
 
 ## Unreleased
-
 ### Added
+- Added functional interaction assets and images to all web layout views.
+- Added comprehensive documentation comments throughout all source files.
 
-- added images  to all pages 
-- added comments to all pages
-## 1.0.3
+---
 
+## 1.0.4 - 2026-10-18
 ### Changed
+- Changed information card icons to high-resolution inline images.
+- Refactored the structural layout of the index page footer.
+- Updated the theme color-coding palette across the enquiry page layout.
+- Added an anchor link on the About Us page that directly routes to the programs page.
+-Changed the README.txt file to a markdown (md) file
 
-- changed infor card icons to images
-- changed my index page footer
-- changed color coding of my inquiry page 
-added a link on AboutUs page that directs to program page
 ### Removed
+- Removed outdated vector icons from the mission and vision sections on the About Us page.
+-Removed the release.yml file
 
--removed info card icons on my mission and vission at the about us page
--
 ### Fixed
-- fixed the image layout to be symmentrical 
+- Fixed the alignment rules of the global grid layout to ensure image wrappers are symmetrical.
