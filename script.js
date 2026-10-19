@@ -1,7 +1,5 @@
 
-/* =========================================================
-   SAVED DREAMS FOUNDATION - MOBILE NAVIGATION
-========================================================= */
+/* SAVED DREAMS FOUNDATION - MOBILE NAVIGATION*/
 
 const menuButton = document.getElementById("menuBtn");
 const navigationMenu = document.getElementById("navMenu");
@@ -35,11 +33,11 @@ if (menuButton && navigationMenu) {
 }
 
 
-/* =========================================================
+/*
    SAVED DREAMS FOUNDATION - INTERACTIVE LOCATION MAP
    Library: Leaflet
    Map tiles: OpenStreetMap
-========================================================= */
+ */
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -90,6 +88,43 @@ document.addEventListener("DOMContentLoaded", function () {
         ])
             .addTo(map)
             .bindPopup(location.popupContent);
+
+    });
+
+});
+
+/* FAQ ACCORDION */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const faqButtons = document.querySelectorAll(".faq-toggle");
+
+    faqButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const answerId = button.getAttribute("aria-controls");
+            const answer = document.getElementById(answerId);
+
+            if (!answer) {
+                return;
+            }
+
+            const isExpanded =
+                button.getAttribute("aria-expanded") === "true";
+
+            // Open or close the selected answer.
+            button.setAttribute("aria-expanded", String(!isExpanded));
+            answer.hidden = isExpanded;
+
+            // Update the plus/minus icon.
+            const icon = button.querySelector(".faq-icon");
+
+            if (icon) {
+                icon.textContent = isExpanded ? "+" : "−";
+            }
+
+        });
 
     });
 

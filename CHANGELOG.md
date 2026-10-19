@@ -5,10 +5,12 @@
 - Added functional interaction assets and images to all web layout views.
 - Added comprehensive documentation comments throughout all source files.
 - Added a interactive map on the Contact Us page using LeafLet library.
-
+- Implemented an interactive FAQ accordion on the About Us page.
+- Added JavaScript to expand and collapse answers.
+- Added responsive styling and accessibility attributes.
 ---
 
-## 1.0.3 - 2026-09-25
+## 1.0.4 - 2026-10-19
 ### Changed
 - Changed information card icons to high-resolution inline images.
 - Refactored the structural layout of the index page footer.
