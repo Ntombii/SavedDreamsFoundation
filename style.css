@@ -1,4 +1,4 @@
-/* =========================================================
+=========================================================
    SAVED DREAMS FOUNDATION
    MAIN WEBSITE STYLESHEET
     */
@@ -1129,9 +1129,7 @@ h3 {
 }
 
 
-/* =========================================================
-   ENQUIRY PAGE TITLE
-   ========================================================= */
+/* ENQUIRY PAGE TITLE */
 
 .enquiry-main h1 {
     max-width: 850px;
@@ -1153,9 +1151,7 @@ h3 {
 }
 
 
-/* =========================================================
-   ENQUIRY FORM
-   ========================================================= */
+/*ENQUIRY FORM */
 
 .enquiry-form {
     width: 100%;
@@ -1178,9 +1174,7 @@ h3 {
 }
 
 
-/* =========================================================
-   FORM LABELS
-   ========================================================= */
+/* FORM LABELS*/
 
 .enquiry-form label {
     display: block;
@@ -1195,9 +1189,7 @@ h3 {
 }
 
 
-/* =========================================================
-   FORM INPUTS
-   ========================================================= */
+/*FORM INPUTS */
 
 .enquiry-form input,
 .enquiry-form select,
@@ -1232,9 +1224,7 @@ h3 {
 }
 
 
-/* =========================================================
-   FORM FOCUS
-   ========================================================= */
+/* FORM FOCUS */
 
 .enquiry-form input:focus,
 .enquiry-form select:focus,
@@ -1246,9 +1236,7 @@ h3 {
 }
 
 
-/* =========================================================
-   TEXTAREA
-   ========================================================= */
+/* TEXTAREA */
 
 .enquiry-form textarea {
     min-height: 150px;
@@ -1257,9 +1245,7 @@ h3 {
 }
 
 
-/* =========================================================
-   PLACEHOLDER
-   ========================================================= */
+/* PLACEHOLDER */
 
 .enquiry-form input::placeholder,
 .enquiry-form textarea::placeholder {
@@ -1267,9 +1253,7 @@ h3 {
 }
 
 
-/* =========================================================
-   SUBMIT BUTTON
-   ========================================================= */
+/* SUBMIT BUTTON */
 
 .enquiry-form button[type="submit"] {
     width: 100%;
@@ -1306,9 +1290,7 @@ h3 {
 }
 
 
-/* =========================================================
-   FORM MESSAGE
-   ========================================================= */
+/* FORM MESSAGE */
 
 .form-message {
     display: none;
@@ -1349,9 +1331,7 @@ h3 {
 }
 
 
-/* =========================================================
-   ENQUIRY FOOTER
-   ========================================================= */
+/* ENQUIRY FOOTER*/
 
 .enquiry-page footer {
     background: #174c3b;
@@ -1370,9 +1350,7 @@ h3 {
 }
 
 
-/* =========================================================
-   TABLET - 900PX
-   ========================================================= */
+/* TABLET - 900PX */
 
 @media (max-width: 900px) {
 
@@ -1390,9 +1368,7 @@ h3 {
 }
 
 
-/* =========================================================
-   TABLET / MOBILE - 768PX
-   ========================================================= */
+/* TABLET / MOBILE - 768PX */
 
 @media (max-width: 768px) {
 
@@ -1516,9 +1492,7 @@ h3 {
 }
 
 
-/* =========================================================
-   SMALL MOBILE - 480PX
-   ========================================================= */
+/*SMALL MOBILE - 480PX */
 
 @media (max-width: 480px) {
 
@@ -1577,9 +1551,7 @@ h3 {
     }
 }
 
-/* =========================================
-   CONTACT PAGE
-========================================= */
+/* CONTACT PAGE */
 
 .contact-page {
     max-width: 1100px;
@@ -1588,9 +1560,7 @@ h3 {
 }
 
 
-/* =========================================
-   CONTACT INTRO
-========================================= */
+/*  CONTACT INTRO */
 
 .contact-intro {
     text-align: center;
@@ -1621,9 +1591,7 @@ h3 {
 }
 
 
-/* =========================================
-   LOCATIONS
-========================================= */
+/*LOCATIONS= */
 
 .locations {
     margin-bottom: 60px;
@@ -1638,9 +1606,7 @@ h3 {
 }
 
 
-/* =========================================
-   LOCATION CARDS
-========================================= */
+/*LOCATION CARDS */
 
 .location-container {
     display: grid;
@@ -1711,9 +1677,7 @@ h3 {
 }
 
 
-/* =========================================
-   CONTACT FORM SECTION
-========================================= */
+/* CONTACT FORM SECTION */
 
 .contact-form-section {
     max-width: 750px;
@@ -1728,9 +1692,7 @@ h3 {
 }
 
 
-/* =========================================
-   CONTACT FORM
-========================================= */
+/* CONTACT FORM */
 
 #contactForm {
     background-color: #FFFFFF;
@@ -1741,9 +1703,7 @@ h3 {
 }
 
 
-/* =========================================
-   FORM GROUP
-========================================= */
+/*FORM GROUP */
 
 .form-group {
     margin-bottom: 20px;
@@ -1757,9 +1717,7 @@ h3 {
 }
 
 
-/* =========================================
-   FORM INPUTS
-========================================= */
+/*FORM INPUTS */
 
 #contactForm input,
 #contactForm textarea {
@@ -1803,9 +1761,7 @@ h3 {
 }
 
 
-/* =========================================
-   SEND BUTTON
-========================================= */
+/* SEND BUTTON */
 
 #contactForm button {
     width: 100%;
@@ -1836,9 +1792,7 @@ h3 {
 }
 
 
-/* =========================================
-   FORM SUCCESS MESSAGE
-========================================= */
+/*FORM SUCCESS MESSAGE*/
 
 #contactMessage {
     display: none;
@@ -1854,9 +1808,7 @@ h3 {
 }
 
 
-/* =========================================
-   CONTACT PAGE RESPONSIVE DESIGN
-========================================= */
+/*  CONTACT PAGE RESPONSIVE DESIGN */
 
 @media (max-width: 700px) {
 
@@ -1884,9 +1836,7 @@ h3 {
 }
 
 
-/* =========================================
-   SMALL MOBILE DEVICES
-========================================= */
+/*SMALL MOBILE DEVICES */
 
 @media (max-width: 450px) {
 
@@ -2029,4 +1979,252 @@ h3 {
     }
 }
 
+/*  INTERACTIVE LOCATION MAP */
 
+.map-section {
+    padding: 70px 6%;
+    background-color: #F9F8F3;
+}
+
+.map-heading {
+    max-width: 720px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.map-subtitle {
+    color: #3E6B27;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.map-heading h2 {
+    color: #3E6B27;
+    font-size: 2.3rem;
+    margin: 12px 0;
+}
+
+.map-heading > p:last-child {
+    color: #444;
+    line-height: 1.7;
+}
+
+.map-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.5fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.map-information {
+    padding: 30px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    border: 1px solid #EAF2E8;
+    line-height: 1.8;
+}
+
+.map-information h3 {
+    color: #3E6B27;
+    margin-top: 0;
+}
+
+.map-information a {
+    color: #3E6B27;
+    overflow-wrap: anywhere;
+}
+
+#foundation-map {
+    width: 100%;
+    height: 360px;
+    min-height: 300px;
+    border-radius: 16px;
+    border: 1px solid #EAF2E8;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .map-section {
+        padding: 45px 5%;
+    }
+
+    .map-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .map-heading h2 {
+        font-size: 1.9rem;
+    }
+
+    #foundation-map {
+        height: 320px;
+    }
+}
+
+
+/*  1. SMOOTH PAGE SCROLLING */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*  2. NAVIGATION LINK TRANSITIONS*/
+
+.nav-menu a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #C58C28;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-menu a:hover {
+    color: #C58C28;
+}
+
+/*3. HERO SECTION ANIMATION */
+
+.hero-content .eyebrow,
+.hero-content h1,
+.hero-content .hero-text,
+.hero-content .hero-buttons {
+    animation: fadeSlideUp 0.8s ease both;
+}
+
+.hero-content h1 {
+    animation-delay: 0.15s;
+}
+
+.hero-content .hero-text {
+    animation-delay: 0.3s;
+}
+
+.hero-content .hero-buttons {
+    animation-delay: 0.45s;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*  4. HERO IMAGE TRANSITION */
+
+.hero-image img {
+    transition: transform 1s ease;
+}
+
+.hero:hover .hero-image img {
+    transform: scale(1.03);
+}
+
+/* 5. BUTTON TRANSITIONS */
+
+.btn {
+    display: inline-block;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:focus-visible {
+    outline: 3px solid #C58C28;
+    outline-offset: 4px;
+}
+
+/*  6. INFORMATION CARD ANIMATIONS */
+
+.info-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.info-image {
+    overflow: hidden;
+}
+
+.info-image img {
+    display: block;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.info-card:hover .info-image img {
+    transform: scale(1.06);
+}
+
+/* 7. SCROLL REVEAL ANIMATIONS*/
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 8. ACCESSIBILITY: REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}

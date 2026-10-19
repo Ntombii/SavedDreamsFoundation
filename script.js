@@ -1,4 +1,3 @@
-
 /* SAVED DREAMS FOUNDATION - MOBILE NAVIGATION*/
 
 const menuButton = document.getElementById("menuBtn");

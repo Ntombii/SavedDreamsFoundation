@@ -1,6 +1,7 @@
 # Saved Dreams Foundation
 
 ## Unreleased
+## 1.0.4 - 2026-10-19
 ### Added
 - Added functional interaction assets and images to all web layout views.
 - Added comprehensive documentation comments throughout all source files.
@@ -21,6 +22,9 @@
 - Changed my README.txt file into a markdowm file
 - Enhanced the Contact Us page by helping visitors explore
   the foundation's location.
+
+### Updates
+- Adding subtle CSS transitions and JavaScript animations on the index page images
 
 ### Removed
 - Removed outdated vector icons from the mission and vision sections on the About Us page.
