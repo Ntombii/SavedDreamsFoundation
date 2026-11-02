@@ -468,7 +468,10 @@ h3 {
 
 
 
-/*hero section-about */
+
+/* =========================================
+   ABOUT HERO SECTION
+========================================= */
 
 .about-hero {
     background:
@@ -486,12 +489,14 @@ h3 {
 
     position: relative;
     overflow: hidden;
+    isolation: isolate;
 
-    /* Smooth background transition */
     background-size: 100% 100%;
 
     animation: heroBackground 10s ease-in-out infinite alternate;
 }
+
+/* Hero content stays above floating bubbles */
 
 .about-hero-content {
     max-width: 760px;
@@ -502,7 +507,91 @@ h3 {
     z-index: 2;
 }
 
-/* label of who we are */
+/* =========================================
+   FLOATING SAVED DREAMS WORD BUBBLES
+========================================= */
+
+/* Background bubble container */
+
+.word-bubbles {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+/* Individual word bubbles */
+
+.word-bubble {
+    position: absolute;
+
+    bottom: -100px;
+
+    left: var(--left);
+
+    padding: 12px 22px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: var(--font-size);
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+
+    backdrop-filter: blur(3px);
+
+    animation:
+        flyingWords var(--duration) linear var(--delay) infinite;
+}
+
+/* Floating word movement */
+
+@keyframes flyingWords {
+
+    0% {
+        transform: translate3d(0, 0, 0) rotate(-8deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translate3d(70px, -220px, 0) rotate(8deg);
+        opacity: 0.6;
+    }
+
+    90% {
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: translate3d(-40px, -550px, 0) rotate(-5deg);
+        opacity: 0;
+    }
+
+}
+
+/* =========================================
+   ABOUT HERO TEXT ANIMATIONS
+========================================= */
+
+/* WHO WE ARE label */
 
 .about-hero .section-label {
     color: var(--gold);
@@ -512,7 +601,7 @@ h3 {
     animation: fadeInUp 0.8s ease forwards;
 }
 
-/* hero heading */
+/* Hero heading */
 
 .about-hero h1 {
     font-size: clamp(2.2rem, 4vw, 3.6rem);
@@ -526,7 +615,7 @@ h3 {
     animation-delay: 0.3s;
 }
 
-/* hero description */
+/* Hero description */
 
 .about-hero-content > p:last-child {
     opacity: 0;
@@ -538,7 +627,9 @@ h3 {
     line-height: 1.8;
 }
 
-/*hero keyframes */
+/* =========================================
+   HERO KEYFRAMES
+========================================= */
 
 /* Fade and slide upwards */
 
@@ -571,7 +662,9 @@ h3 {
 }
 
 
-/* about page section */
+/* =========================================
+   ABOUT PAGE SECTION
+========================================= */
 
 .about-section,
 .mission-section,
@@ -628,7 +721,9 @@ h3 {
 }
 
 
-/* missions */
+/* =========================================
+   MISSION SECTION
+========================================= */
 
 .mission-section {
     background: var(--green-soft);
@@ -680,7 +775,9 @@ h3 {
 }
 
 
-/* CTA of about*/
+/* =========================================
+   ABOUT CTA SECTION
+========================================= */
 
 .about-cta {
     background: #f0efe7;
@@ -695,7 +792,9 @@ h3 {
 }
 
 
-/*hero animation thats responsive */
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
 
 @media (max-width: 768px) {
 
@@ -709,7 +808,22 @@ h3 {
 
 }
 
-/* reduced motion */
+/* Smaller floating bubbles on mobile */
+
+@media (max-width: 600px) {
+
+    .word-bubble {
+        padding: 9px 15px;
+
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -723,6 +837,12 @@ h3 {
         opacity: 1;
 
         transform: none;
+    }
+
+    .word-bubble {
+        animation: none;
+
+        display: none;
     }
 
 }
@@ -762,7 +882,45 @@ h3 {
     /* Background animation */
     animation: programHeroZoom 12s ease-in-out infinite alternate;
 }
+/* Programs hero bubble container */
 
+.program-hero .word-bubbles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Programs page floating words */
+
+.program-hero .word-bubble {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 600px) {
+
+    .program-hero .word-bubble {
+        padding: 9px 15px;
+        font-size: 12px;
+    }
+
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .program-hero .word-bubble {
+        animation: none;
+        display: none;
+    }
+
+}
 /* hero content */
 
 .program-hero-content {

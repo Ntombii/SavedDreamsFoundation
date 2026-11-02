@@ -1,4 +1,5 @@
-/* SAVED DREAMS FOUNDATION - MOBILE NAVIGATION*/
+
+/* SAVED DREAMS FOUNDATION - MOBILE NAVIGATION */
 
 const menuButton = document.getElementById("menuBtn");
 const navigationMenu = document.getElementById("navMenu");
@@ -36,7 +37,7 @@ if (menuButton && navigationMenu) {
    SAVED DREAMS FOUNDATION - INTERACTIVE LOCATION MAP
    Library: Leaflet
    Map tiles: OpenStreetMap
- */
+*/
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -47,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Main office location from the supplied map screenshot.
     const locations = [
         {
             name: "Saved Dreams Foundation - Main Office",
@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ];
 
-    // Create the map centred on the main office.
     const map = L.map("foundation-map").setView(
         [
             locations[0].latitude,
@@ -70,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
         15
     );
 
-    // Display the OpenStreetMap map tiles.
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
             '&copy; <a href="https://www.openstreetmap.org/copyright">' +
@@ -78,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
         maxZoom: 19
     }).addTo(map);
 
-    // Display a map marker for each configured location.
     locations.forEach(function (location) {
 
         L.marker([
@@ -91,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
 
 /* FAQ ACCORDION */
 
@@ -112,16 +110,130 @@ document.addEventListener("DOMContentLoaded", function () {
             const isExpanded =
                 button.getAttribute("aria-expanded") === "true";
 
-            // Open or close the selected answer.
             button.setAttribute("aria-expanded", String(!isExpanded));
             answer.hidden = isExpanded;
 
-            // Update the plus/minus icon.
             const icon = button.querySelector(".faq-icon");
 
             if (icon) {
                 icon.textContent = isExpanded ? "+" : "−";
             }
+
+        });
+
+    });
+
+});
+
+
+/* CONTACT PAGE HEADING ANIMATION */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const contactHeading = document.querySelector(".contact-intro h1");
+
+    if (contactHeading) {
+        contactHeading.classList.add("show-heading");
+    }
+
+});
+
+
+
+/* =========================================
+   ABOUT AND PROGRAMS - FLOATING WORD BUBBLES
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Find both hero sections.
+    const heroSections = document.querySelectorAll(
+        ".about-hero, .program-hero"
+    );
+
+    // Words for the About page.
+    const aboutWords = [
+        "SAVED DREAMS",
+        "HOPE",
+        "EMPOWERMENT",
+        "COMMUNITY",
+        "A BRIGHTER FUTURE",
+        "TOGETHER WE GROW",
+        "INSPIRING CHANGE",
+        "DREAM BIG",
+        "BUILDING FUTURES",
+        "MAKING A DIFFERENCE"
+    ];
+
+    // Words for the Programs page.
+    const programWords = [
+        "SAVED DREAMS",
+        "YOUTH EMPOWERMENT",
+        "EDUCATION",
+        "COMMUNITY SUPPORT",
+        "WOMEN EMPOWERMENT",
+        "HEALTH AWARENESS",
+        "BUILDING FUTURES",
+        "CREATING OPPORTUNITIES",
+        "INSPIRING CHANGE",
+        "STRONGER COMMUNITIES"
+    ];
+
+    // Respect reduced-motion preferences.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        return;
+    }
+
+    heroSections.forEach((hero) => {
+
+        // Create the bubble container.
+        const bubbleContainer = document.createElement("div");
+
+        bubbleContainer.classList.add("word-bubbles");
+
+        bubbleContainer.setAttribute("aria-hidden", "true");
+
+        hero.prepend(bubbleContainer);
+
+        // Select words according to the current page.
+        const words = hero.classList.contains("about-hero")
+            ? aboutWords
+            : programWords;
+
+        // Generate floating word bubbles.
+        words.forEach((word) => {
+
+            const bubble = document.createElement("span");
+
+            bubble.classList.add("word-bubble");
+
+            bubble.textContent = word;
+
+            // Random horizontal position.
+            bubble.style.setProperty(
+                "--left",
+                Math.random() * 85 + "%"
+            );
+
+            // Random animation speed.
+            bubble.style.setProperty(
+                "--duration",
+                (10 + Math.random() * 8) + "s"
+            );
+
+            // Random starting delay.
+            bubble.style.setProperty(
+                "--delay",
+                (Math.random() * 10) + "s"
+            );
+
+            // Random bubble font size.
+            bubble.style.setProperty(
+                "--font-size",
+                (13 + Math.random() * 9) + "px"
+            );
+
+            bubbleContainer.appendChild(bubble);
 
         });
 
