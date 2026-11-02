@@ -1,7 +1,7 @@
 # Saved Dreams Foundation
 
 ## Unreleased
-## 1.0.5 - 2026-10-02
+## 1.0.6 - 2026-10-02
 ### Added
 - Added functional interaction assets and images to all web layout views.
 - Added comprehensive documentation comments throughout all source files.
@@ -12,6 +12,8 @@
 - Added responsive styling and accessibility attributes.
 - Added responsive styling for desktop and mobile layouts.
 - Added animation on all pages that lat no more than 2 seconds
+- Added form Validation on both Contact pages and Enquiry pages
+- Added robots.txt
 ---
 
 ## 1.0.4 - 2026-10-19
@@ -29,7 +31,7 @@
 
 ### Removed
 - Removed outdated vector icons from the mission and vision sections on the About Us page.
-- Removed my rlease.yml file
+- Removed my release.yml file
 
 ### Fixed
 - Fixed the alignment rules of the global grid layout to ensure image wrappers are symmetrical.

@@ -73,27 +73,153 @@
     <main class="enquiry-main">
         <h1>Volunteer & Sponsorship Enquiry</h1>
 		<!--form for sponsor,volunteer, or general enquiry-->
-        <form id="enquiryForm" class="enquiry-form" action="#" method="post">
-            <label for="fullname">Full Name:</label>
-            <input type="text" id="fullname" name="fullname" required>
+        
+<!-- volunteer and sponsorship enquiry form -->
 
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
+<form id="enquiryForm" class="enquiry-form" novalidate>
 
-            <label for="type">I want to:</label>
-			<!--selection tag for multible list-->
-            <select id="type" name="type">
-                <option value="volunteer">Become a Volunteer</option>
-                <option value="sponsor">Become a Sponsor</option>
-                <option value="general">General Enquiry</option>
-            </select>
+    <!-- Full Name -->
+    <label for="fullname">Full Name:</label>
+    <input
+        type="text"
+        id="fullname"
+        name="fullname"
+        placeholder="Enter your full name"
+        autocomplete="name"
+        minlength="2"
+        maxlength="80"
+        required
+    >
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-<!--submit button for the form-->
-            <button type="submit">Submit Enquiry</button>
-            <p id="formMessage" class="form-message"></p>
-        </form>
+    <!-- Email Address -->
+    <label for="email">Email Address:</label>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="example@email.com"
+        autocomplete="email"
+        required
+    >
+
+    <!-- Enquiry Type -->
+    <label for="type">I want to:</label>
+
+    <select id="type" name="type" required>
+        <option value="">-- Select an enquiry type --</option>
+        <option value="volunteer">Become a Volunteer</option>
+        <option value="sponsor">Become a Sponsor</option>
+        <option value="general">General Enquiry</option>
+    </select>
+
+    <!-- details for volunteer enquiry-->
+    <div id="volunteerDetails" class="conditional-field" hidden>
+
+        <h3>Volunteer Availability</h3>
+
+        <p>
+            Please tell us when you would be available to
+            participate in our community programmes.
+        </p>
+
+        <label for="availability">When are you available?</label>
+
+        <select id="availability" name="availability">
+            <option value="">-- Select your availability --</option>
+            <option value="Weekdays">Weekdays</option>
+            <option value="Weekends">Weekends</option>
+            <option value="Both">Weekdays and weekends</option>
+            <option value="Flexible">Flexible availability</option>
+            <option value="Not sure">Not sure yet</option>
+        </select>
+
+        <p class="form-help">
+            Volunteer opportunities depend on current programme
+            requirements and availability confirmed by the Foundation.
+        </p>
+
+    </div>
+
+    <!--details for sponsorship enquiry-->
+    <div id="sponsorDetails" class="conditional-field" hidden>
+
+        <h3>Sponsorship Information</h3>
+
+        <p>
+            Tell us how you would like to support Saved Dreams Foundation.
+        </p>
+
+        <label for="sponsorshipType">Type of Sponsorship:</label>
+
+        <select id="sponsorshipType" name="sponsorshipType">
+            <option value="">-- Select sponsorship type --</option>
+            <option value="Financial contribution">
+                Financial contribution
+            </option>
+            <option value="Goods or donations">
+                Goods or donations in kind
+            </option>
+            <option value="Professional services">
+                Professional services
+            </option>
+            <option value="Not sure">
+                Not sure yet
+            </option>
+        </select>
+
+        <label for="sponsorshipAmount">
+            Proposed Contribution Amount (R):
+        </label>
+
+        <input
+            type="number"
+            id="sponsorshipAmount"
+            name="sponsorshipAmount"
+            min="0.01"
+            step="0.01"
+            placeholder="Optional - enter an amount in Rand"
+        >
+
+        <p class="form-help">
+            This amount is optional. Sponsorship requirements and
+            contributions should be discussed and confirmed with
+            the Foundation.
+        </p>
+
+    </div>
+
+    <!-- message -->
+    <label for="message">Message:</label>
+
+    <textarea
+        id="message"
+        name="message"
+        rows="5"
+        minlength="10"
+        maxlength="1000"
+        placeholder="Tell us more about your enquiry..."
+        required
+    ></textarea>
+
+    <p class="form-help">
+        Please provide at least 10 characters so we can understand
+        your enquiry.
+    </p>
+
+    <!-- btn submit -->
+    <button type="submit">Submit Enquiry</button>
+
+    <!--message for form submission status-->
+    <div
+        id="formMessage"
+        class="form-message"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+</form>
+
     </main>
 <!--this is the footer-->
    <!-- footer -->
@@ -155,5 +281,6 @@
 
     </footer>
 
+<script src="script.js"></script>
 </body>
 </html>

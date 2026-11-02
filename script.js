@@ -333,3 +333,208 @@ document.addEventListener("DOMContentLoaded", () => {
     filterPrograms("all");
 
 });
+
+/* enquiry form validation and submission */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const enquiryForm = document.getElementById("enquiryForm");
+
+    // Run only on the enquiry page.
+    if (!enquiryForm) return;
+
+    // Form elements.
+    const fullName = document.getElementById("fullname");
+    const email = document.getElementById("email");
+    const enquiryType = document.getElementById("type");
+    const message = document.getElementById("message");
+
+    // Conditional sections.
+    const volunteerDetails =
+        document.getElementById("volunteerDetails");
+
+    const sponsorDetails =
+        document.getElementById("sponsorDetails");
+
+    const availability =
+        document.getElementById("availability");
+
+    const sponsorshipType =
+        document.getElementById("sponsorshipType");
+
+    const sponsorshipAmount =
+        document.getElementById("sponsorshipAmount");
+
+    const formMessage =
+        document.getElementById("formMessage");
+
+
+    /* relevant fields are shown or hidden based on the selected enquiry type */
+
+    function updateEnquiryFields() {
+
+        const selectedType = enquiryType.value;
+
+        const isVolunteer = selectedType === "volunteer";
+        const isSponsor = selectedType === "sponsor";
+
+        // Show or hide volunteer information.
+        volunteerDetails.hidden = !isVolunteer;
+
+        // Show or hide sponsorship information.
+        sponsorDetails.hidden = !isSponsor;
+
+        // Make volunteer availability compulsory only
+        // when volunteering is selected.
+        availability.required = isVolunteer;
+
+        // Make sponsorship type compulsory only
+        // when sponsorship is selected.
+        sponsorshipType.required = isSponsor;
+
+        // Clear fields when their sections are hidden.
+        if (!isVolunteer) {
+            availability.value = "";
+        }
+
+        if (!isSponsor) {
+            sponsorshipType.value = "";
+            sponsorshipAmount.value = "";
+            sponsorshipAmount.setCustomValidity("");
+        }
+
+        // Clear previous response.
+        formMessage.textContent = "";
+    }
+
+    enquiryType.addEventListener("change", updateEnquiryFields);
+
+
+    /* user input validation and form submission */
+
+    enquiryForm.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+        formMessage.textContent = "";
+
+        // Remove extra spaces from text fields.
+        const nameValue = fullName.value.trim();
+        const emailValue = email.value.trim();
+        const messageValue = message.value.trim();
+
+        // Name validation.
+        fullName.setCustomValidity(
+            nameValue.length < 2
+                ? "Please enter your full name using at least 2 characters."
+                : ""
+        );
+
+        // Email validation.
+        email.setCustomValidity(
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)
+                ? "Please enter a valid email address."
+                : ""
+        );
+
+        // Message validation.
+        message.setCustomValidity(
+            messageValue.length < 10
+                ? "Please provide a message containing at least 10 characters."
+                : ""
+        );
+
+        // Sponsorship amount validation.
+        const amountValue = sponsorshipAmount.value.trim();
+
+        sponsorshipAmount.setCustomValidity(
+            amountValue !== "" &&
+            (!Number.isFinite(Number(amountValue)) ||
+             Number(amountValue) <= 0)
+                ? "Please enter a valid sponsorship amount greater than zero."
+                : ""
+        );
+
+        // Check all required fields and custom validation rules.
+        if (!enquiryForm.checkValidity()) {
+
+            enquiryForm.reportValidity();
+
+            formMessage.textContent =
+                "Please check your information and correct the highlighted fields.";
+
+            return;
+        }
+
+
+        /* information is valid, process the enquiry */
+
+        const selectedType = enquiryType.value;
+
+        let response = "";
+
+        const name = nameValue;
+
+        // Process volunteer enquiry.
+        if (selectedType === "volunteer") {
+
+            const selectedAvailability = availability.value;
+
+            response =
+                `Thank you, ${name}! Your volunteer enquiry has been reviewed in this form preview.\n\n` +
+                `Your stated availability: ${selectedAvailability}.\n\n` +
+                "Volunteer opportunities depend on the Foundation's current programmes, " +
+                "available opportunities and team confirmation. The Foundation will need " +
+                "to confirm whether a suitable opportunity is available.";
+
+        }
+
+        // Process sponsorship enquiry.
+        else if (selectedType === "sponsor") {
+
+            const selectedSponsorship = sponsorshipType.value;
+
+            const amount = amountValue
+                ? new Intl.NumberFormat("en-ZA", {
+                    style: "currency",
+                    currency: "ZAR"
+                }).format(Number(amountValue))
+                : "Not specified";
+
+            response =
+                `Thank you, ${name}, for your interest in sponsoring Saved Dreams Foundation!\n\n` +
+                `Sponsorship type: ${selectedSponsorship}.\n` +
+                `Proposed contribution: ${amount}.\n\n` +
+                "There is no confirmed sponsorship price or package displayed on this form. " +
+                "The Foundation will need to discuss programme requirements, available " +
+                "resources and the proposed contribution with you.";
+
+        }
+
+        // Process general enquiry.
+        else if (selectedType === "general") {
+
+            response =
+                `Thank you, ${name}, for contacting Saved Dreams Foundation!\n\n` +
+                "Your general enquiry details have been validated. " +
+                "Your message concerns the Foundation's activities and community work. " +
+                "Please contact the Foundation directly to arrange a response.";
+
+        }
+
+
+        /* response message for form submission status */
+
+        formMessage.textContent =
+            response +
+            "\n\nIMPORTANT: This is a validation preview only. " +
+            "Your enquiry has NOT been sent or saved. " +
+            "A working email or backend service must be connected " +
+            "before the Foundation can receive your information.";
+
+        formMessage.classList.add("success-message");
+
+    });
+
+});
+
