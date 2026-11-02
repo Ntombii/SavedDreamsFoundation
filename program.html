@@ -131,9 +131,62 @@
     </section>
 
 
-    <!-- =========================================
-         PROGRAMS
-    ========================================= -->
+    <!-- programmes -->
+
+<!-- PROGRAMME FILTER BUTTONS -->
+
+<div class="program-filter-section">
+
+    <p class="filter-description">
+        Explore our programmes by selecting a category.
+    </p>
+
+    <div class="program-filters" role="group"
+         aria-label="Filter programmes by category">
+
+        <button class="filter-btn active"
+                type="button"
+                data-filter="all"
+                aria-pressed="true">
+            All Programmes
+        </button>
+
+        <button class="filter-btn"
+                type="button"
+                data-filter="youth"
+                aria-pressed="false">
+            Youth & Education
+        </button>
+
+        <button class="filter-btn"
+                type="button"
+                data-filter="food"
+                aria-pressed="false">
+            Food Relief
+        </button>
+
+        <button class="filter-btn"
+                type="button"
+                data-filter="health"
+                aria-pressed="false">
+            Health & Awareness
+        </button>
+
+        <button class="filter-btn"
+                type="button"
+                data-filter="women"
+                aria-pressed="false">
+            Women & Girls
+        </button>
+
+    </div>
+
+    <p id="filter-results" class="filter-results"
+       aria-live="polite">
+        Showing all programmes.
+    </p>
+
+</div>
 
     <section class="programs-section">
 
@@ -141,48 +194,15 @@
 
 
             <!-- Youth Mentorship -->
-            <article class="program-card">
+            <article class="program-card" data-category="youth education">
 
                 <div class="program-image">
 
-                    <div class="program-slideshow">
-
-                        <img
-                            src="images/project5.jpg"
-                            alt="Youth mentorship and skills development"
-                            class="program-slide active-slide"
-                        >
-
-                        <img
-                            src="images/project2.jpg"
-                            alt="Youth community development activity"
-                            class="program-slide"
-                        >
-
-                        <img
-                            src="images/project4.jpg"
-                            alt="Youth skills development programme"
-                            class="program-slide"
-                        >
-
-                    </div>
-
-                    <button
-                        class="slide-prev"
-                        aria-label="Previous image"
-                    >
-                        &#10094;
-                    </button>
-
-                    <button
-                        class="slide-next"
-                        aria-label="Next image"
-                    >
-                        &#10095;
-                    </button>
+                    <img
+                        src="images/project1.jpg"
+                        alt="Youth mentorship and skills development">
 
                 </div>
-
 
                 <div class="program-content">
 
@@ -219,7 +239,7 @@
 
 
             <!-- Food Relief -->
-            <article class="program-card">
+            <article class="program-card" data-category="food relief">
 
                 <div class="program-image">
 
@@ -266,7 +286,15 @@
 
 
             <!-- Health & Awareness -->
-            <article class="program-card">
+            <article class="program-card" data-category="Community Awareness">
+                <div class="program-image">
+
+                    <img
+                        src="images/health.jpg"
+                        alt="Community awareness and health education"
+                    >
+
+                </div>
 
                 <div class="program-content program-content-full">
 
@@ -275,7 +303,7 @@
                     </span>
 
                     <h2>
-                        Health &amp; Community Awareness
+                        Community Awareness
                     </h2>
 
                     <p>
@@ -323,7 +351,15 @@
 
 
             <!-- Menstrual Dignity -->
-            <article class="program-card">
+            <article class="program-card" data-category="women health">
+                <div class="program-image">
+
+                    <img
+                        src="images/menstr.jpg"
+                        alt="Youth mentorship and skills development"
+                    >
+
+                </div>
 
                 <div class="program-content program-content-full">
 
@@ -364,9 +400,7 @@
     </section>
 
 
-    <!-- =========================================
-         NEWS
-    ========================================= -->
+    <!--news section -->
 
     <section class="program-news">
 
@@ -439,9 +473,7 @@
 </main>
 
 
-<!-- =========================================
-     FOOTER
-========================================= -->
+<!--footer-->
 
 <footer>
 

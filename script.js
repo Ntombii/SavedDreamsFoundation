@@ -240,3 +240,96 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+/* [programme filtering-dynamic] */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Select filter controls and programme cards across the page.
+    // The controls are intentionally outside .programs-section in the HTML.
+    const filterButtons = document.querySelectorAll(".filter-btn");
+
+    const programCards = document.querySelectorAll(".programs-section .program-card");
+
+    // Results message.
+    const resultsMessage = document.getElementById("filter-results");
+
+    // Stop if the required elements are missing.
+    if (!filterButtons.length || !programCards.length) {
+        return;
+    }
+
+    // Function to filter programmes.
+    function filterPrograms(selectedCategory) {
+
+        let visibleCount = 0;
+
+        programCards.forEach((card) => {
+
+            // Read and normalise the categories assigned to each card.
+            const categories = (card.dataset.category || "")
+                .toLowerCase()
+                .split(/\s+/)
+                .filter(Boolean);
+
+            // Check whether the programme matches.
+            const shouldDisplay =
+                selectedCategory === "all" ||
+                categories.includes(selectedCategory.toLowerCase());
+
+            // Show or hide the programme.
+            card.hidden = !shouldDisplay;
+
+            if (shouldDisplay) {
+                visibleCount++;
+            }
+
+        });
+
+        // Update the results message.
+        if (resultsMessage) {
+
+            if (selectedCategory === "all") {
+                resultsMessage.textContent =
+                    `Showing all ${visibleCount} programmes.`;
+            } else {
+                resultsMessage.textContent =
+                    `Showing ${visibleCount} matching programme(s).`;
+            }
+
+        }
+
+    }
+
+    // Add click events to the filter buttons.
+    filterButtons.forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            const selectedCategory = button.dataset.filter;
+
+            // Update the active button.
+            filterButtons.forEach((filterButton) => {
+
+                const isActive = filterButton === button;
+
+                filterButton.classList.toggle("active", isActive);
+
+                filterButton.setAttribute(
+                    "aria-pressed",
+                    String(isActive)
+                );
+
+            });
+
+            // Filter the programme cards.
+            filterPrograms(selectedCategory);
+
+        });
+
+    });
+
+    // Display all programmes when the page loads.
+    filterPrograms("all");
+
+});

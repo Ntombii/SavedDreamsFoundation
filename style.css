@@ -507,9 +507,7 @@ h3 {
     z-index: 2;
 }
 
-/* =========================================
-   FLOATING SAVED DREAMS WORD BUBBLES
-========================================= */
+/* floating word bubbles */
 
 /* Background bubble container */
 
@@ -775,9 +773,7 @@ h3 {
 }
 
 
-/* =========================================
-   ABOUT CTA SECTION
-========================================= */
+/* about cta */
 
 .about-cta {
     background: #f0efe7;
@@ -792,9 +788,7 @@ h3 {
 }
 
 
-/* =========================================
-   RESPONSIVE DESIGN
-========================================= */
+/* responsive design */
 
 @media (max-width: 768px) {
 
@@ -929,6 +923,132 @@ h3 {
     position: relative;
 
     z-index: 2;
+}
+
+/* =========================================
+   PROGRAMMES - DYNAMIC FILTER STYLING
+========================================= */
+
+.program-filter-section {
+    max-width: 1100px;
+
+    margin: 0 auto 40px;
+
+    padding: 25px 20px;
+
+    text-align: center;
+}
+
+.filter-description {
+    color: var(--text);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+/* Filter buttons container */
+
+.program-filters {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+/* Individual filter buttons */
+
+.filter-btn {
+    padding: 11px 22px;
+
+    border: 2px solid var(--green-dark);
+
+    border-radius: 30px;
+
+    background: var(--white);
+
+    color: var(--green-dark);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+
+.filter-btn:hover {
+    background: var(--green-soft);
+
+    transform: translateY(-3px);
+}
+
+/* Active filter button */
+
+.filter-btn.active {
+    background: var(--green-dark);
+
+    color: var(--white);
+
+    border-color: var(--green-dark);
+
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* Keyboard accessibility */
+
+.filter-btn:focus-visible {
+    outline: 3px solid var(--gold);
+
+    outline-offset: 4px;
+}
+
+/* Results message */
+
+.filter-results {
+    margin-top: 20px;
+
+    color: var(--green-dark);
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+/* Ensure filtered cards are hidden */
+
+.program-card[hidden] {
+    display: none !important;
+}
+
+/* Responsive filter buttons */
+
+@media (max-width: 600px) {
+
+    .program-filter-section {
+        padding: 20px 15px;
+    }
+
+    .program-filters {
+        gap: 10px;
+    }
+
+    .filter-btn {
+        padding: 10px 16px;
+
+        font-size: 13px;
+    }
+
 }
 
 /* section label */
