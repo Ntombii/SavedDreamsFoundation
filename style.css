@@ -729,9 +729,7 @@ h3 {
 
 
 
-/* =========================================================
-   PROGRAMS PAGE HERO
-   ========================================================= */
+/* hero section- programs */
 
 .program-hero {
     min-height: 400px;
@@ -748,6 +746,10 @@ h3 {
 
     color: var(--white);
 
+    position: relative;
+
+    overflow: hidden;
+
     background:
         linear-gradient(
             rgba(21, 61, 52, 0.88),
@@ -756,11 +758,32 @@ h3 {
         url("images/project5.jpg")
         center / cover
         no-repeat;
+
+    /* Background animation */
+    animation: programHeroZoom 12s ease-in-out infinite alternate;
 }
+
+/* hero content */
 
 .program-hero-content {
     max-width: 800px;
+
+    position: relative;
+
+    z-index: 2;
 }
+
+/* section label */
+
+.program-hero .section-label {  
+    color: var(--gold);
+
+    opacity: 0;
+
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* hero heading */
 
 .program-hero h1 {
     font-size: clamp(2.2rem, 4vw, 3.6rem);
@@ -768,7 +791,15 @@ h3 {
     line-height: 1.15;
 
     margin: 12px 0 20px;
+
+    opacity: 0;
+
+    animation: fadeInUp 1s ease forwards;
+
+    animation-delay: 0.3s;
 }
+
+/* hero description */
 
 .program-hero p:not(.section-label) {
     max-width: 700px;
@@ -776,12 +807,53 @@ h3 {
     margin: 0 auto;
 
     font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    opacity: 0;
+
+    animation: fadeInUp 1s ease forwards;
+
+    animation-delay: 0.6s;
 }
 
 
-/* =========================================================
-   PROGRAM INTRO
-   ========================================================= */
+/* hero animation keyframes */
+
+/* Fade and slide upwards */
+
+@keyframes fadeInUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+/* Gentle background zoom */
+
+@keyframes programHeroZoom {
+
+    from {
+        background-size: 100% 100%;
+    }
+
+    to {
+        background-size: 110% 110%;
+    }
+
+}
+
+
+/*program introduction */
 
 .program-intro {
     max-width: 850px;
@@ -809,9 +881,7 @@ h3 {
 }
 
 
-/* =========================================================
-   PROGRAM SECTION
-   ========================================================= */
+/* section programs */
 
 .programs-section {
     background: #f0efe7;
@@ -832,6 +902,8 @@ h3 {
     gap: 30px;
 }
 
+/* cards-program*/
+
 .program-card {
     background: var(--white);
 
@@ -845,21 +917,77 @@ h3 {
         0 8px 25px var(--shadow);
 
     transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
 }
 
+/*hover effect -card */
+
 .program-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
 
     box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.13);
+
+    border-color: var(--gold);
 }
 
 
-/* =========================================================
-   PROGRAM IMAGE / SLIDESHOW
-   ========================================================= */
+/* res design */
+
+@media (max-width: 768px) {
+
+    .program-hero {
+        min-height: 360px;
+
+        padding: 65px 20px;
+    }
+
+    .program-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .program-hero p:not(.section-label) {
+        font-size: 1rem;
+    }
+
+    .program-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/*reduced motion*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .program-hero,
+    .program-hero .section-label,
+    .program-hero h1,
+    .program-hero p:not(.section-label) {
+
+        animation: none;
+
+        opacity: 1;
+
+        transform: none;
+    }
+
+    .program-card {
+        transition: none;
+    }
+
+    .program-card:hover {
+        transform: none;
+    }
+
+}
+
+
+
+/* program image -slideshow */
 
 .program-image {
     position: relative;
@@ -903,9 +1031,7 @@ h3 {
 }
 
 
-/* =========================================================
-   SLIDER BUTTONS
-   ========================================================= */
+/* slide buttons */
 
 .slide-prev,
 .slide-next {
@@ -948,9 +1074,7 @@ h3 {
 }
 
 
-/* =========================================================
-   PROGRAM CONTENT
-   ========================================================= */
+/* program content */
 
 .program-content {
     padding: 32px;
@@ -989,9 +1113,7 @@ h3 {
 }
 
 
-/* =========================================================
-   PROGRAM LIST
-   ========================================================= */
+/* program list */
 
 .program-content ul {
     list-style: none;
@@ -1022,9 +1144,7 @@ h3 {
 }
 
 
-/* =========================================================
-   SERVICE LIST
-   ========================================================= */
+/*service list */
 
 .service-list {
     display: grid;
@@ -1063,9 +1183,7 @@ h3 {
 }
 
 
-/* =========================================================
-   PROGRAM NEWS
-   ========================================================= */
+/* program news */
 
 .program-news {
     padding: 80px 20px;
@@ -1111,9 +1229,7 @@ h3 {
 }
 
 
-/* =========================================================
-   PROGRAM CTA
-   ========================================================= */
+/* program cta */
 
 .program-cta {
     padding: 75px 20px;
@@ -1138,11 +1254,8 @@ h3 {
     margin: 0 auto 25px;
 }
 
-/* =========================================================
-   ENQUIRY PAGE
-   Add class="enquiry-page" to <body>
-   Add class="enquiry-main" to <main>
-   ========================================================= */
+
+/* enquiry page*/
 
 .enquiry-page {
     background: #f7f2e6;
@@ -1151,6 +1264,7 @@ h3 {
 .enquiry-page .topbar {
     background: #174c3b;
 }
+
 .enquiry-page .header {
     background: rgba(255, 255, 255, 0.97);
 
@@ -1163,7 +1277,10 @@ h3 {
 
 .enquiry-page .nav-menu a {
     color: #174c3b;
+
+    transition: color 0.3s ease;
 }
+
 .enquiry-page .nav-menu a:hover {
     color: #c99a27;
 }
@@ -1177,9 +1294,7 @@ h3 {
 }
 
 
-/* =========================================================
-   ENQUIRY MAIN
-   ========================================================= */
+/* main- enquiry */
 
 .enquiry-main {
     min-height: calc(100vh - 180px);
@@ -1190,7 +1305,7 @@ h3 {
 }
 
 
-/* ENQUIRY PAGE TITLE */
+/* page title- enquiry */
 
 .enquiry-main h1 {
     max-width: 850px;
@@ -1209,10 +1324,14 @@ h3 {
     font-size: 44px;
 
     line-height: 1.2;
+
+    opacity: 0;
+
+    animation: enquiryFadeUp 0.9s ease forwards;
 }
 
 
-/*ENQUIRY FORM */
+/* enquiry form */
 
 .enquiry-form {
     width: 100%;
@@ -1232,10 +1351,40 @@ h3 {
 
     box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.10);
+
+    /* Form entrance animation */
+    opacity: 0;
+
+    animation: enquiryFadeUp 1s ease forwards;
+
+    animation-delay: 0.3s;
+
+    transition:
+        box-shadow 0.35s ease,
+        transform 0.35s ease;
 }
 
 
-/* FORM LABELS*/
+/* animation -enquiry */
+
+@keyframes enquiryFadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* form labels */
 
 .enquiry-form label {
     display: block;
@@ -1250,7 +1399,7 @@ h3 {
 }
 
 
-/*FORM INPUTS */
+/*form input */
 
 .enquiry-form input,
 .enquiry-form select,
@@ -1281,23 +1430,26 @@ h3 {
 
     transition:
         border-color 0.3s ease,
-        box-shadow 0.3s ease;
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
 }
 
 
-/* FORM FOCUS */
+/* form input focus */
 
 .enquiry-form input:focus,
 .enquiry-form select:focus,
 .enquiry-form textarea:focus {
     border-color: #2f5f20;
 
+    background: #fffefa;
+
     box-shadow:
         0 0 0 3px rgba(47, 95, 32, 0.10);
 }
 
 
-/* TEXTAREA */
+/* text area*/
 
 .enquiry-form textarea {
     min-height: 150px;
@@ -1306,7 +1458,7 @@ h3 {
 }
 
 
-/* PLACEHOLDER */
+/* placeholder*/
 
 .enquiry-form input::placeholder,
 .enquiry-form textarea::placeholder {
@@ -1314,7 +1466,7 @@ h3 {
 }
 
 
-/* SUBMIT BUTTON */
+/* submit button */
 
 .enquiry-form button[type="submit"] {
     width: 100%;
@@ -1337,21 +1489,27 @@ h3 {
 
     transition:
         background-color 0.3s ease,
-        transform 0.3s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .enquiry-form button[type="submit"]:hover {
     background: #174c3b;
 
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 6px 15px rgba(23, 76, 59, 0.20);
 }
 
 .enquiry-form button[type="submit"]:active {
     transform: translateY(0);
+
+    box-shadow: none;
 }
 
 
-/* FORM MESSAGE */
+/* form message */
 
 .form-message {
     display: none;
@@ -1378,6 +1536,8 @@ h3 {
 
     border:
         1px solid #b8c9a5;
+
+    animation: messageFade 0.5s ease;
 }
 
 .form-message.error {
@@ -1389,10 +1549,31 @@ h3 {
 
     border:
         1px solid #e0b5b5;
+
+    animation: messageFade 0.5s ease;
 }
 
 
-/* ENQUIRY FOOTER*/
+/* animation- form message */
+
+@keyframes messageFade {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* footer-enquiryry */
 
 .enquiry-page footer {
     background: #174c3b;
@@ -1410,6 +1591,54 @@ h3 {
     margin: 0;
 }
 
+
+/* responsive design */
+
+@media (max-width: 768px) {
+
+    .enquiry-main {
+        padding: 60px 18px;
+    }
+
+    .enquiry-main h1 {
+        font-size: 34px;
+
+        margin-bottom: 30px;
+    }
+
+    .enquiry-form {
+        padding: 28px 22px;
+    }
+
+}
+
+
+/* reduced motion*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .enquiry-main h1,
+    .enquiry-form,
+    .form-message.success,
+    .form-message.error {
+
+        animation: none;
+
+        opacity: 1;
+
+        transform: none;
+    }
+
+    .enquiry-page *,
+    .enquiry-page *::before,
+    .enquiry-page *::after {
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
 
 /* TABLET - 900PX */
 
@@ -2106,6 +2335,34 @@ h3 {
     border: 1px solid #EAF2E8;
     z-index: 1;
 }
+
+/* CONTACT PAGE HEADING ANIMATION */
+
+@keyframes headingFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-intro h1 {
+    animation: headingFadeIn 1s ease-out forwards;
+}
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .contact-intro h1 {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
 
 @media (max-width: 768px) {
     .map-section {

@@ -1,7 +1,7 @@
 # Saved Dreams Foundation
 
 ## Unreleased
-## 1.0.4 - 2026-10-19
+## 1.0.5 - 2026-10-02
 ### Added
 - Added functional interaction assets and images to all web layout views.
 - Added comprehensive documentation comments throughout all source files.
@@ -11,6 +11,7 @@
 - Added JavaScript to expand and collapse answers.
 - Added responsive styling and accessibility attributes.
 - Added responsive styling for desktop and mobile layouts.
+- Added animation on all pages that lat no more than 2 seconds
 ---
 
 ## 1.0.4 - 2026-10-19
