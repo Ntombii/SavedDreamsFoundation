@@ -1,11 +1,3 @@
-=========================================================
-   SAVED DREAMS FOUNDATION
-   MAIN WEBSITE STYLESHEET
-    */
-
-/*
-   GLOBAL RESET
-   ========================================================= */
 
 * {
     margin: 0;
@@ -58,9 +50,7 @@ h3 {
 }
 
 
-/* =========================================================
-   TOP BAR
-   ========================================================= */
+/* top bar */
 
 .topbar {
     background: var(--green-mid);
@@ -73,9 +63,7 @@ h3 {
 }
 
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+/* header */
 
 .header {
     position: sticky;
@@ -99,9 +87,7 @@ h3 {
 }
 
 
-/* =========================================================
-   LOGO
-   ========================================================= */
+/*logo */
 
 .logo {
     display: inline-block;
@@ -116,9 +102,7 @@ h3 {
 }
 
 
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
+/*nav*/
 
 .nav-menu {
     display: flex;
@@ -168,9 +152,7 @@ h3 {
 }
 
 
-/* =========================================================
-   MOBILE MENU BUTTON
-   ========================================================= */
+/* btn of mobile menu */
 
 .menu-btn {
     display: none;
@@ -196,9 +178,7 @@ h3 {
 }
 
 
-/* =========================================================
-   HERO SECTION - HOME
-   ========================================================= */
+/* hero section-home */
 
 .hero {
     position: relative;
@@ -292,9 +272,7 @@ h3 {
 }
 
 
-/* =========================================================
-   BUTTONS
-   ========================================================= */
+/* buttons */
 
 .btn {
     display: inline-block;
@@ -338,9 +316,7 @@ h3 {
 }
 
 
-/* =========================================================
-   GENERAL SECTIONS
-   ========================================================= */
+/* general sections */
 
 .section {
     padding: 72px 20px;
@@ -352,9 +328,7 @@ h3 {
 }
 
 
-/* =========================================================
-   HOME INTRODUCTION
-   ========================================================= */
+/*home intro */
 
 .intro {
     background: var(--white);
@@ -377,9 +351,7 @@ h3 {
 }
 
 
-/* =========================================================
-   INFORMATION CARDS
-   ========================================================= */
+/* infor cards */
 
 .info-cards {
     display: grid;
@@ -416,9 +388,7 @@ h3 {
 }
 
 
-/* =========================================================
-   GENERAL CTA
-   ========================================================= */
+/* general CTA */
 
 .cta {
     background: #f0efe7;
@@ -437,9 +407,7 @@ h3 {
 }
 
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/*footer*/
 
 .footer {
     background: var(--green-dark);
@@ -499,9 +467,8 @@ h3 {
 }
 
 
-/* =========================================================
-   ABOUT PAGE HERO
-   ========================================================= */
+
+/*hero section-about */
 
 .about-hero {
     background:
@@ -516,31 +483,95 @@ h3 {
     padding: 86px 20px;
 
     text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    /* Smooth background transition */
+    background-size: 100% 100%;
+
+    animation: heroBackground 10s ease-in-out infinite alternate;
 }
 
 .about-hero-content {
     max-width: 760px;
 
     margin: 0 auto;
+
+    position: relative;
+    z-index: 2;
 }
+
+/* label of who we are */
+
+.about-hero .section-label {
+    color: var(--gold);
+
+    opacity: 0;
+
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* hero heading */
 
 .about-hero h1 {
     font-size: clamp(2.2rem, 4vw, 3.6rem);
 
     margin: 12px 0 16px;
+
+    opacity: 0;
+
+    animation: fadeInUp 1s ease forwards;
+
+    animation-delay: 0.3s;
 }
 
-.about-hero .section-label,
-.about-section .section-label,
-.mission-section .section-label,
-.team-section .section-label {
-    color: var(--gold);
+/* hero description */
+
+.about-hero-content > p:last-child {
+    opacity: 0;
+
+    animation: fadeInUp 1s ease forwards;
+
+    animation-delay: 0.6s;
+
+    line-height: 1.8;
+}
+
+/*hero keyframes */
+
+/* Fade and slide upwards */
+
+@keyframes fadeInUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* Gentle background movement */
+
+@keyframes heroBackground {
+
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 100% 50%;
+    }
+
 }
 
 
-/* =========================================================
-   ABOUT PAGE SECTIONS
-   ========================================================= */
+/* about page section */
 
 .about-section,
 .mission-section,
@@ -597,9 +628,7 @@ h3 {
 }
 
 
-/* =========================================================
-   MISSION
-   ========================================================= */
+/* missions */
 
 .mission-section {
     background: var(--green-soft);
@@ -651,9 +680,7 @@ h3 {
 }
 
 
-/* =========================================================
-   ABOUT CTA
-   ========================================================= */
+/* CTA of about*/
 
 .about-cta {
     background: #f0efe7;
@@ -666,6 +693,40 @@ h3 {
 
     font-size: clamp(2rem, 3vw, 2.6rem);
 }
+
+
+/*hero animation thats responsive */
+
+@media (max-width: 768px) {
+
+    .about-hero {
+        padding: 65px 20px;
+    }
+
+    .about-hero h1 {
+        font-size: 2.2rem;
+    }
+
+}
+
+/* reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-hero,
+    .about-hero .section-label,
+    .about-hero h1,
+    .about-hero-content > p:last-child {
+
+        animation: none;
+
+        opacity: 1;
+
+        transform: none;
+    }
+
+}
+
 
 
 /* =========================================================
