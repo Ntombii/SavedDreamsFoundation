@@ -1851,6 +1851,33 @@ h3 {
 }
 
 
+/* FOOTER FACEBOOK SOCIAL LINK */
+
+.footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 10px 18px;
+    background-color: var(--green-mid);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.footer-social-link:hover {
+    background-color: var(--gold);
+    color: var(--green-dark);
+    transform: translateY(-3px);
+}
+
+.footer-social-link:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
 /* footer-enquiryry */
 
 .enquiry-page footer {
