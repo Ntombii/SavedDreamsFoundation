@@ -1,7 +1,7 @@
 # Saved Dreams Foundation
 
 ## Unreleased
-## 1.0.6 - 2026-10-02
+## 1.0.7 - 2026-10-02
 ### Added
 - Added functional interaction assets and images to all web layout views.
 - Added comprehensive documentation comments throughout all source files.
@@ -14,9 +14,10 @@
 - Added animation on all pages that lat no more than 2 seconds
 - Added form Validation on both Contact pages and Enquiry pages
 - Added robots.txt
+-Added a AJAX sumission and client-sdie validation on the Contacts pages
 ---
 
-## 1.0.4 - 2026-10-19
+##
 ### Changed
 - Changed information card icons to high-resolution inline images.
 - Refactored the structural layout of the index page footer.

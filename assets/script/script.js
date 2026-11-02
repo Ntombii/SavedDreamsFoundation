@@ -1,5 +1,5 @@
 
-/* SAVED DREAMS FOUNDATION - MOBILE NAVIGATION */
+/* mobile nav*/
 
 const menuButton = document.getElementById("menuBtn");
 const navigationMenu = document.getElementById("navMenu");
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-/* FAQ ACCORDION */
+/*accordion faq */
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-/* CONTACT PAGE HEADING ANIMATION */
+/* contact page heading animation */
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -140,9 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-/* =========================================
-   ABOUT AND PROGRAMS - FLOATING WORD BUBBLES
-========================================= */
+/* floating word bubbles */
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -533,6 +531,181 @@ document.addEventListener("DOMContentLoaded", () => {
             "before the Foundation can receive your information.";
 
         formMessage.classList.add("success-message");
+
+    });
+
+});
+
+/* client-side form validation */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const contactForm = document.getElementById("contactForm");
+
+    // Run only when the contact form exists
+    if (!contactForm) return;
+
+    const nameInput = document.getElementById("contact-name");
+    const emailInput = document.getElementById("contact-email");
+    const typeInput = document.getElementById("message-type");
+    const messageInput = document.getElementById("contact-msg");
+
+    const responseMessage = document.getElementById("contactMessage");
+    const submitButton = document.getElementById("contactSubmit");
+
+    // Display messages to the visitor
+    function showMessage(message, type) {
+        responseMessage.textContent = message;
+        responseMessage.className = `form-message ${type}`;
+    }
+
+    // Validate and submit the form
+    contactForm.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        // Clear previous feedback
+        showMessage("", "");
+        
+        // Read and trim visitor input
+        const fullName = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const messageType = typeInput.value;
+        const fullMessage = messageInput.value.trim();
+
+        // Reset custom validation
+        nameInput.setCustomValidity("");
+        emailInput.setCustomValidity("");
+        typeInput.setCustomValidity("");
+        messageInput.setCustomValidity("");
+
+        // Validate name
+        if (fullName.length < 2) {
+            nameInput.setCustomValidity(
+                "Please enter your full name using at least 2 characters."
+            );
+        }
+
+        // Validate email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            emailInput.setCustomValidity(
+                "Please enter a valid email address."
+            );
+        }
+
+        // Validate enquiry type
+        if (!messageType) {
+            typeInput.setCustomValidity(
+                "Please select a type of enquiry."
+            );
+        }
+
+        // Validate message
+        if (fullMessage.length < 10) {
+            messageInput.setCustomValidity(
+                "Your message must contain at least 10 characters."
+            );
+        }
+
+        if (fullMessage.length > 3000) {
+            messageInput.setCustomValidity(
+                "Your message cannot exceed 3000 characters."
+            );
+        }
+
+        // Check all form fields
+        if (!contactForm.checkValidity()) {
+            contactForm.reportValidity();
+
+            showMessage(
+                "Please correct the highlighted fields before submitting.",
+                "error-message"
+            );
+
+            return;
+        }
+
+        // Prevent duplicate submissions
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+
+        showMessage(
+            "Please wait while your enquiry is being submitted...",
+            "loading-message"
+        );
+
+        try {
+
+            // Confirm that the endpoint has been configured
+            if (contactForm.action.includes("YOUR_FORM_ID")) {
+                throw new Error(
+                    "The form submission endpoint has not been configured."
+                );
+            }
+
+            // Collect all form data
+            const formData = new FormData(contactForm);
+
+            // AJAX request using Fetch API
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            // Process the server response
+            if (response.ok) {
+
+                showMessage(
+                    "Thank you! Your enquiry has been submitted successfully. Saved Dreams Foundation will get back to you.",
+                    "success-message"
+                );
+
+                // Clear the form after successful submission
+                contactForm.reset();
+
+            } else {
+
+                let errorDetails = "Please try again later.";
+
+                try {
+                    const result = await response.json();
+
+                    if (result.errors && result.errors.length > 0) {
+                        errorDetails = result.errors
+                            .map(error => error.message)
+                            .join(" ");
+                    }
+                } catch (error) {
+                    // Use the default error message
+                }
+
+                throw new Error(errorDetails);
+            }
+
+        } catch (error) {
+
+            console.error("Contact form error:", error);
+
+            showMessage(
+                "Sorry, your enquiry could not be submitted. " +
+                error.message +
+                " Please check your connection or email us at saveddreamsngo@gmail.com.",
+                "error-message"
+            );
+
+        } finally {
+
+            // Re-enable the button
+            submitButton.disabled = false;
+            submitButton.innerHTML =
+                '<i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message';
+
+        }
 
     });
 

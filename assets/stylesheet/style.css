@@ -585,9 +585,7 @@ h3 {
 
 }
 
-/* =========================================
-   ABOUT HERO TEXT ANIMATIONS
-========================================= */
+/* hero anchor -about */
 
 /* WHO WE ARE label */
 
@@ -625,9 +623,7 @@ h3 {
     line-height: 1.8;
 }
 
-/* =========================================
-   HERO KEYFRAMES
-========================================= */
+/* keyframes of hero */
 
 /* Fade and slide upwards */
 
@@ -660,9 +656,7 @@ h3 {
 }
 
 
-/* =========================================
-   ABOUT PAGE SECTION
-========================================= */
+/* section of about  */
 
 .about-section,
 .mission-section,
@@ -719,9 +713,7 @@ h3 {
 }
 
 
-/* =========================================
-   MISSION SECTION
-========================================= */
+/* mission section */
 
 .mission-section {
     background: var(--green-soft);
@@ -815,9 +807,7 @@ h3 {
 }
 
 
-/* =========================================
-   REDUCED MOTION ACCESSIBILITY
-========================================= */
+/* motion accessibility */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -869,7 +859,7 @@ h3 {
             rgba(21, 61, 52, 0.88),
             rgba(29, 95, 74, 0.78)
         ),
-        url("images/project5.jpg")
+        url("../images/project1.jpg")
         center / cover
         no-repeat;
 
@@ -925,9 +915,7 @@ h3 {
     z-index: 2;
 }
 
-/* =========================================
-   PROGRAMMES - DYNAMIC FILTER STYLING
-========================================= */
+/* programes -dynamic filter */
 
 .program-filter-section {
     max-width: 1100px;
@@ -1851,7 +1839,7 @@ h3 {
 }
 
 
-/* FOOTER FACEBOOK SOCIAL LINK */
+/* facebook social link footer */
 
 .footer-social-link {
     display: inline-flex;
@@ -2201,7 +2189,7 @@ h3 {
 }
 
 
-/*LOCATION CARDS */
+/*location container */
 
 .location-container {
     display: grid;
@@ -2298,7 +2286,7 @@ h3 {
 }
 
 
-/*FORM GROUP */
+/*group form*/
 
 .form-group {
     margin-bottom: 20px;
@@ -2312,7 +2300,7 @@ h3 {
 }
 
 
-/*FORM INPUTS */
+/*inouts form*/
 
 #contactForm input,
 #contactForm textarea {
@@ -2356,7 +2344,7 @@ h3 {
 }
 
 
-/* SEND BUTTON */
+/* btn send*/
 
 #contactForm button {
     width: 100%;
@@ -2387,7 +2375,7 @@ h3 {
 }
 
 
-/*FORM SUCCESS MESSAGE*/
+/*success message*/
 
 #contactMessage {
     display: none;
@@ -2403,7 +2391,7 @@ h3 {
 }
 
 
-/*  CONTACT PAGE RESPONSIVE DESIGN */
+/*  contact page  */
 
 @media (max-width: 700px) {
 
@@ -2431,7 +2419,7 @@ h3 {
 }
 
 
-/*SMALL MOBILE DEVICES */
+/*small devices */
 
 @media (max-width: 450px) {
 
@@ -2457,7 +2445,7 @@ h3 {
 
 }
 
-/* FAQ ACCORDION */
+/*FAQ accordion*/
 
 .faq-section {
     padding: 75px 6%;
@@ -2574,7 +2562,7 @@ h3 {
     }
 }
 
-/*  INTERACTIVE LOCATION MAP */
+/*  interactive location map */
 
 .map-section {
     padding: 70px 6%;
@@ -2641,7 +2629,7 @@ h3 {
     z-index: 1;
 }
 
-/* CONTACT PAGE HEADING ANIMATION */
+/* heading animation -contact page*/
 
 @keyframes headingFadeIn {
     from {
@@ -2688,13 +2676,13 @@ h3 {
 }
 
 
-/*  1. SMOOTH PAGE SCROLLING */
+/*   scroll-smoothly */
 
 html {
     scroll-behavior: smooth;
 }
 
-/*  2. NAVIGATION LINK TRANSITIONS*/
+/*   nav link */
 
 .nav-menu a {
     position: relative;
@@ -2721,7 +2709,7 @@ html {
     color: #C58C28;
 }
 
-/*3. HERO SECTION ANIMATION */
+/*hero section navigation */
 
 .hero-content .eyebrow,
 .hero-content h1,
@@ -2754,7 +2742,7 @@ html {
     }
 }
 
-/*  4. HERO IMAGE TRANSITION */
+/*  transition hero image */
 
 .hero-image img {
     transition: transform 1s ease;
@@ -2764,7 +2752,7 @@ html {
     transform: scale(1.03);
 }
 
-/* 5. BUTTON TRANSITIONS */
+/* btn transition */
 
 .btn {
     display: inline-block;
@@ -2788,7 +2776,7 @@ html {
     outline-offset: 4px;
 }
 
-/*  6. INFORMATION CARD ANIMATIONS */
+/*  animation hero card */
 
 .info-card {
     transition:
@@ -2815,7 +2803,7 @@ html {
     transform: scale(1.06);
 }
 
-/* 7. SCROLL REVEAL ANIMATIONS*/
+/* scroll reveal */
 
 .reveal {
     opacity: 0;
@@ -2830,7 +2818,7 @@ html {
     transform: translateY(0);
 }
 
-/* 8. ACCESSIBILITY: REDUCED MOTION */
+/*reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
     html {
